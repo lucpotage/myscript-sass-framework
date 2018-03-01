@@ -1,0 +1,18 @@
+/* common / mixins / button size */
+
+@mixin button-size($size, $badge: false) {
+  @if map-has-key($button-sizes, $size) {
+    height: size(map-get(map-get($button-sizes, $size), height));
+    padding: size(map-get(map-get($button-sizes, $size), padding));
+    font-size: size(map-get(map-get($button-sizes, $size), font-size));
+    line-height: size(map-get(map-get($button-sizes, $size), line-height));
+
+    @if $badge == true {
+      padding-left: 0;
+      padding-right: 0;
+      width: size(map-get(map-get($button-sizes, $size), height));
+    }
+  } @else {
+    @error "Invalid button size: '#{$size}'";
+  }
+}

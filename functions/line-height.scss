@@ -1,0 +1,16 @@
+@function line-height($line-height, $font-family: 'Whitney') {
+  /* Do we support the font family? */
+  @if not map-has-key($font-metrics, $font-family) {
+    @error 'The font family #{$font-family} is not supported. Please choose between Whitney and Inconsolata.';
+  }
+  $sizes: map-get(map-get($font-metrics, $font-family), 'sizes');
+
+  // @warn $line-height $font-family;
+
+  /* Do we support the predefined size? */
+  @if map-has-key($sizes, $line-height) {
+    @return size(map-get(map-get($sizes, $line-height), 'line-height'));
+  }
+
+  @return size($line-height);
+}

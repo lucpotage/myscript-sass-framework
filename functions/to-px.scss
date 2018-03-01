@@ -1,0 +1,22 @@
+/* common / functions / to-px */
+
+@function to-px($val) {
+  // @debug $val;
+
+  /* value equals 'auto' */
+  @if $val == auto or $val == inherit or unit($val) == '%' {
+    @return $val;
+  }
+  /* value has no unit */
+  @else if unitless($val) {
+    @return ceil(($val * $r)/1rem * 16 + 0px);
+  }
+  /* value is in rem */
+  @else if unit($val) == "rem" {
+    @return ceil($val/1rem * 16 + 0px);
+  }
+  /* unexpected value */
+  @else {
+    @error "Function to-px() needs input in rem.";
+  }
+}

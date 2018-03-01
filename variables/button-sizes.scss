@@ -1,0 +1,32 @@
+/* common / variables / button sizes */
+
+$button-sizes: (
+  'L': (
+    height: 5,
+    padding: 0 2 0.5,
+    font-size: (26 * $u),
+    line-height: (50 * $u),
+    icon-raising: (-4 * $u)
+  ),
+  'M': (
+    height: 4,
+    padding: 0 1.5 0.5,
+    font-size: (20 * $u),
+    line-height: (40 * $u),
+    icon-raising: (-4 * $u)
+  ),
+  'S': (
+    height: 3,
+    padding: (0 1 (4 * $u)),
+    font-size: (16 * $u),
+    line-height: (28 * $u),
+    icon-raising: (-3 * $u)
+  ),
+  'XS': (
+    height: 2,
+    line-height: (18 * $u),
+    padding: (0 0.5 (2 * $u)),
+    font-size: (14 * $u),
+    icon-raising: (-7 * $u)
+  )
+);

@@ -1,0 +1,15 @@
+/* common / functions / size */
+
+@function size($val) {
+  $new-val: to-px(nth($val, 1));
+  
+  @if length($val) > 1 {
+    @for $i from 2 through length($val) {
+      $new-val: $new-val + ' ' + to-px(nth($val, $i));
+    }
+    /* We return an unquoted string if it's a list of values */
+    @return unquote($new-val);
+  }
+  /* Else we return a number */
+  @return $new-val;
+}

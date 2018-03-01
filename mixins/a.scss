@@ -1,0 +1,9 @@
+/* common / mixins / a */
+
+@mixin a--inverse {
+  color: $color-neutral-light;
+
+  &:hover, &:active, &.selected {
+    color: white;
+  }
+}

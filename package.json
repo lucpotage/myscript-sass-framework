@@ -1,0 +1,8 @@
+{
+  "name": "@lucpotage/myscript-sass-framework",
+  "version": "0.5.0",
+  "main": "all.scss",
+  "repository": "https://github.com/lucpotage/myscript-sass-framework.git",
+  "author": "Luc Potage <luc.potage@myscript.com>",
+  "license": "MIT"
+}

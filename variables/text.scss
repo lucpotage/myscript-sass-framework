@@ -1,0 +1,72 @@
+/* font families */
+$font-family-primary: 'Whitney A', 'Whitney B', sans-serif;
+$font-family-primary-zh-hans: 'source-han-sans-traditional', sans-serif;
+$font-family-primary-zh-hant: 'source-han-sans-simplified-c', sans-serif;
+$font-family-primary-ja: 'source-han-sans-japanese', sans-serif;
+$font-family-primary-ko: 'source-han-sans-korean', sans-serif;
+$font-family-mono: 'Inconsolata', monospace;
+
+/* font weights */
+$font-weight-light: 300;
+$font-weight-normal: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+/* font metrics */
+$font-metrics: (
+  'Whitney': (
+    'shift-factor': 0.38,
+    'sizes': (
+      'XS': (
+        font-size: 14 * $u,
+        line-height: 18 * $u,
+        shift: 4 * $u
+      ),
+      'S': (
+        font-size: 16 * $u,
+        line-height: 24 * $u,
+        shift: 6 * $u
+      ),
+      'M': (
+        font-size: 18 * $u,
+        line-height: 24 * $u,
+        shift: 6 * $u,
+      ),
+      'L': (
+        font-size: 26 * $u,
+        line-height: 36 * $u,
+        shift: 8 * $u
+      ),
+      'XL': (
+        font-size: 34 * $u,
+        line-height: 48 * $u,
+        shift: 0
+      ),
+      'XXL': (
+        font-size: 42 * $u,
+        line-height: 60 * $u,
+        shift: 2 * $u,
+      )
+    )
+  ),
+  'Inconsolata': (
+    'shift-factor': 0.335,
+    'sizes': (
+      'S': (
+        font-size: 16 * $u,
+        line-height: 24 * $u,
+        shift: 7 * $u
+      ),
+      'M': (
+        font-size: 18 * $u,
+        line-height: 24 * $u,
+        shift: 6 * $u
+      ),
+      'L': (
+        font-size: 25 * $u,
+        line-height: 3 * $u,
+        shift: 9 * $u
+      )
+    )
+  )
+);

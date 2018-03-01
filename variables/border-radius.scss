@@ -1,0 +1,11 @@
+/* common / variables / border radius */
+
+$border-radius: (
+  'XXL':  (5 * $u),
+  'XL':   (4 * $u),
+  'L':    (3 * $u),
+  'M':    (3 * $u),
+  'S':    (2 * $u),
+  'XS':   (2 * $u),
+  'disc': 50%
+);

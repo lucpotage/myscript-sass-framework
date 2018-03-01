@@ -1,0 +1,31 @@
+/* common / colors */
+
+$color-black:            #000;
+$color-neutral-dim:      #212426;
+$color-neutral-dark:     #43484D;
+$color-neutral-medium:   #909599;
+$color-neutral-bright:   #D2D6D7;
+$color-neutral-light:    #E9EBEA;
+$color-neutral-pale:     #F5F5F5;
+
+$color-primary-medium:   #006F9E;
+$color-primary-bright:   #00A7CF;
+$color-primary-light:    #D8F8FF;
+
+$color-negative-medium:  #CD1E3C;
+$color-negative-bright:  #F03C5A;
+$color-negative-light:   #FAE6E8;
+
+$color-positive-medium:  #008A45;
+$color-positive-bright:  #10B361;
+$color-positive-light:   #D7F5EB;
+
+$color-orange:           #CC6600;
+
+//
+
+$color-title:           $color-black;
+$color-message:         $color-neutral-dim;
+$color-text-subtle:     $color-neutral-medium;
+$color-text-away:       $color-neutral-bright;
+$color-text-selection:  $color-primary-medium;

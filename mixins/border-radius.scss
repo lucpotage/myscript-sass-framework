@@ -1,0 +1,9 @@
+/* common / mixins / border radius */
+
+@mixin border-radius($size) {
+  @if map-has-key($border-radius, $size) {
+    border-radius: size(map-get($border-radius, $size));
+  } @else {
+    @error "Invalid border radius: '#{$size}'";
+  }
+}

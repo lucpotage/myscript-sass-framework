@@ -1,0 +1,64 @@
+@mixin card($size, $hover: false) {
+  overflow: hidden;
+  border-radius: size(0.25);
+  transition: $duration-short;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @if ($size == 'S') {
+    box-shadow: size(0 0.25 1 -0.5) transparentize($color-black, 0.6);
+
+    &:focus {
+      box-shadow: size(0 0.25 1 -0.5) transparentize($color-black, 0.6), size(0 0 0 (2 * $u)) $color-primary-medium inset;
+    }
+
+    @if ($hover == true) {
+      &:hover {
+        box-shadow: size(0 0.5 1 -0.5) transparentize($color-black, 0.3);
+        transform: translateY(size(-0.25));
+      }
+
+      &:focus:hover {
+        box-shadow: size(0 0.5 1 -0.5) transparentize($color-black, 0.3), size(0 0 0 (2 * $u)) $color-primary-medium inset;
+        transform: translateY(size(-0.25));
+      }
+    } @else {
+      &:hover {
+        box-shadow: size(0 0.25 1 -0.5) transparentize($color-black, 0.6);
+      }
+
+      &:focus:hover {
+        box-shadow: size(0 0.25 1 -0.5) transparentize($color-black, 0.6), size(0 0 0 (2 * $u)) $color-primary-medium inset;
+      }
+    }
+  }
+
+  @if ($size == 'M') {
+    box-shadow: size(0 0.5 2 -1) transparentize($color-black, 0.6);
+
+    &:focus {
+      box-shadow: size(0 0.5 2 -1) transparentize($color-black, 0.6), size(0 0 0 (2 * $u))$color-primary-medium inset;      
+    }
+
+    @if ($hover == true) {
+      &:hover {
+        box-shadow: size(0 1 2 -1) transparentize($color-black, 0.3);
+        transform: translateY(size(-0.5));
+      }
+
+      &:hover:focus {
+        box-shadow: size(0 1 2 -1) transparentize($color-black, 0.3), size(0 0 0 (2 * $u))$color-primary-medium inset;
+      }
+    } @else {
+      &:hover {
+        box-shadow: size(0 0.5 2 -1) transparentize($color-black, 0.6);
+      }
+
+      &:hover:focus {
+        box-shadow: size(0 0.5 2 -1) transparentize($color-black, 0.6), size(0 0 0 (2 * $u)) $color-primary-medium inset;
+      }
+    }
+  }
+}

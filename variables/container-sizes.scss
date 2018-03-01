@@ -1,0 +1,16 @@
+/* common / variables / widths */
+
+$container-sizes: (
+  'F': 100%,
+  '4XL': 126,
+  '3XL': 100,
+  'XXL': 84,
+  'XL': 66,
+  'L': 50,
+  'M': 36,
+  'S': 24
+);
+
+$breakpoint-tablet: map-get($container-sizes, 'L');
+$breakpoint-laptop: map-get($container-sizes, 'XXL');
+$breakpoint-desktop: map-get($container-sizes, '4XL');

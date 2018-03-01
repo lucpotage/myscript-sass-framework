@@ -1,0 +1,28 @@
+/* common / variables / icon sizes */
+
+$icon-sizes: (
+  'XXL': (
+    width: 4,
+    height: 4
+  ),
+  'XL': (
+    width: 3,
+    height: 3
+  ),
+  'L': (
+    width: (26 * $u),
+    height: (26 * $u)
+  ),
+  'M': (
+    width: (20 * $u),
+    height: (20 * $u)
+  ),
+  'S': (
+    width: (16 * $u),
+    height: (16 * $u)
+  ),
+  'XS': (
+    width: 1,
+    height: 1
+  )
+);

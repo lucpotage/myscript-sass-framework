@@ -1,0 +1,9 @@
+/* common / mixins / heading */
+
+@mixin heading($level, $weight) {
+  @if map-has-key($headings, $level) {
+
+  } @else {
+
+  }
+}

@@ -1,0 +1,25 @@
+/* common / mixins / media */
+
+@mixin media($ctx) {
+  @if $ctx == 'tablet' {
+    @media (min-width: size($breakpoint-tablet)) {
+      @content;
+    }
+  } @else if $ctx == 'laptop' {
+    @media (min-width: size($breakpoint-laptop)) {
+      @content;
+    }
+  } @else if $ctx == 'desktop' {
+    @media (min-width: size($breakpoint-desktop)) {
+      @content;
+    }
+  } @else if map-has-key($container-sizes, $ctx) {
+    @media (min-width: size(map-get($container-sizes, $ctx))) {
+      @content;
+    }
+  } @else {
+    @media (min-width: size($ctx)) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@mixin text($size, $rest...) {
+  @if length($rest) == 1 {
+    @if nth($rest, 1) == 'mono' {
+      /* Ex: @include text('S', 'mono') */
+      font-family: $font-family-mono;
+      @if type-of($size) == list {
+        @if length($size) > 0 {
+          @include text-breakpoint(nth($size, 1), nth($size, 1), 'Inconsolata');
+        }
+        @if length($size) > 1 {
+          @include media('tablet') {
+            @include text-breakpoint(nth($size, 2), nth($size, 2), 'Inconsolata');
+          }
+        }
+        @if length($size) > 2 {
+          @include media('laptop') {
+            @include text-breakpoint(nth($size, 3), nth($size, 3), 'Inconsolata');
+          }
+        }
+      } @else {
+        @include text-breakpoint($size, $size, 'Inconsolata');
+      }
+    } @else {
+      /* Ex: @include text('S', 3) */
+      @if type-of($size) == list and type-of(nth($rest, 1)) == list {
+        @if length($size) > 0 and length(nth($rest, 1)) > 0 {
+          @include text-breakpoint(nth($size, 1), nth(nth($rest, 1), 1), 'Whitney');
+        }
+        @if length($size) > 1 and length(nth($rest, 1)) > 1 {
+          @include media('tablet') {
+            @include text-breakpoint(nth($size, 2), nth(nth($rest, 1), 2), 'Whitney');
+          }
+        }
+        @if length($size) > 2 and length(nth($rest, 1)) > 2 {
+          @include media('laptop') {
+            @include text-breakpoint(nth($size, 3), nth(nth($rest, 1), 3), 'Whitney');
+          }
+        }
+      } @else {
+        @include text-breakpoint($size, nth($rest, 1), 'Whitney');
+      }
+    }
+  } @else if length($rest) == 2 and nth($rest, 2) == 'mono' {
+    /* Ex: @include text('S', 3, 'mono') */
+    font-family: $font-family-mono;
+    @if type-of($size) == list and type-of(nth($rest, 1)) == list {
+      @if length($size) > 0 and length(nth($rest, 1)) > 0 {
+        @include text-breakpoint(nth($size, 1), nth(nth($rest, 1), 1), 'Inconsolata');
+      }
+      @if length($size) > 1 and length(nth($rest, 1)) > 1 {
+        @include media('tablet') {
+          @include text-breakpoint(nth($size, 2), nth(nth($rest, 1), 2), 'Inconsolata');
+        }
+      }
+      @if length($size) > 2 and length(nth($rest, 1)) > 2 {
+        @include media('laptop') {
+          @include text-breakpoint(nth($size, 3), nth(nth($rest, 1), 3), 'Inconsolata');
+        }
+      }
+    } @else {
+      @include text-breakpoint($size, nth($rest, 1), 'Inconsolata');
+    }
+  } @else {
+    /* Ex: @include text('S') */
+    @if type-of($size) == list {
+      @if length($size) > 0 {
+        @include text-breakpoint(nth($size, 1), nth($size, 1), 'Whitney');
+      }
+      @if length($size) > 1 {
+        @include media('tablet') {
+          @include text-breakpoint(nth($size, 2), nth($size, 2), 'Whitney');
+        }
+      }
+      @if length($size) > 2 {
+        @include media('laptop') {
+          @include text-breakpoint(nth($size, 3), nth($size, 3), 'Whitney');
+        }
+      }
+    } @else {
+      @include text-breakpoint($size, $size, 'Whitney');
+    }
+  }
+}
+
+/* Never use it in your stylesheet */
+@mixin text-breakpoint($font-size, $line-height, $font-family) {
+  font-size: font-size($font-size);
+  line-height: line-height($line-height);
+  padding-top: vertical-rythm($font-size, $line-height, $font-family) + size(0);
+  padding-bottom: size(1) - vertical-rythm($font-size, $line-height, $font-family);
+}

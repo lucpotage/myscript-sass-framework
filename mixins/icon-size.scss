@@ -1,0 +1,16 @@
+/* common / mixins / icon size */
+
+@mixin icon-size($size) {
+  @if map-has-key($icon-sizes, $size) {
+    width: size(map-get(map-get($icon-sizes, $size), width));
+    height: size(map-get(map-get($icon-sizes, $size), height));
+  } @else {
+    @error "Invalid icon size: '#{$size}'";
+  }
+
+  @if map-has-key($button-sizes, $size) {
+    &.Icn--inline {
+      margin-top: size(map-get(map-get($button-sizes, $size), icon-raising));
+    }
+  }
+}

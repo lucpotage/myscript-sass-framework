@@ -1,0 +1,11 @@
+/* common / mixins / container-size */
+
+@mixin max-width($size) {
+  @if map-has-key($container-sizes, $size) {
+    max-width: size(map-get($container-sizes, $size));
+  } @else if unitless($size) {
+    max-width: size($size);
+  } @else {
+    @error "Invalid container size: '#{$size}'";
+  }
+}

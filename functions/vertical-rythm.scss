@@ -1,0 +1,12 @@
+@function vertical-rythm($font-size, $line-height, $font-family) {
+  $shift-factor: map-get(map-get($font-metrics, $font-family), 'shift-factor');
+  /* If the shift is predefined */
+  $sizes: map-get(map-get($font-metrics, $font-family), 'sizes');
+  @if map-has-key($sizes, $font-size) {
+    @return size(map-get(map-get($sizes, $font-size), 'shift'));
+  }
+  /* Else we calculate it */
+  $shift: round((0.5 * $line-height - $shift-factor * $font-size) % 12);
+
+  @return $shift;
+}
